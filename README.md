@@ -1,40 +1,46 @@
-# Uplift Modeling for Marketing Campaign Optimization
+# Creative Gaming: Uplift Modeling
 
 ## Project Overview
-This project focuses on the application of uplift modeling to optimize the effectiveness of a marketing campaign for the "Zalon" campaign by Creative Gaming. The goal is to identify the incremental impact of targeted advertising on customer behavior, distinguishing between those who received the ad and those who did not.
+This project applies uplift modeling to optimize the marketing campaign effectiveness for the mobile game "Space Pirates" developed by Creative Gaming. The focus is on understanding the incremental impact of the marketing campaign on user conversion rates.
 
 ## Objective
-The main objective is to employ uplift modeling techniques to enhance decision-making in marketing strategies, aiming to maximize the return on investment by targeting the customers most likely to respond positively to the campaign.
+To utilize uplift modeling to identify customer segments most likely to respond positively to the marketing campaign, thereby maximizing the efficiency of marketing spend.
 
 ## Data Description
-The dataset includes two main groups:
-- **Control Group (cg_organic_control)**: Customers who did not receive the ad.
-- **Treatment Group (cg_ad_random)**: Customers who received the ad.
+The data consists of two main groups:
+- **Control group (`cg_organic_control`)**: Users who did not receive the marketing campaign.
+- **Treatment group (`cg_ad_random`)**: Users who received the marketing campaign.
 
-Each record in the dataset includes customer demographics, past interaction data, and whether they responded to the campaign.
+Each user record includes demographics, gameplay data, and whether they made a purchase during the campaign.
 
 ## Methodology
 ### Data Preparation
-- Merging control and treatment group data.
-- Ensuring balanced representation in training and test sets.
+Merged control and treatment data, ensuring balanced groups for unbiased analysis.
 
-### Model Building
-- Logistic Regression was used to predict the probability of a positive response in both the treatment and control groups.
-- Calculation of uplift score by estimating the difference in probabilities between the two groups.
+### Model Training
+- **Logistic Regression and Random Forest Models** were used to predict the likelihood of conversion.
+- **Uplift Calculation**: Uplift scores were calculated by the difference in predicted probabilities between the treatment and control models.
 
-### Evaluation
-- The models were evaluated using the uplift score, which measures the additional gain from targeting a customer due to the campaign.
-- Performance was quantified using incremental uplift curves across various customer segments.
+### Evaluation Metrics
+- **Accuracy and Uplift Scores**: Evaluated using test datasets to ensure model reliability.
+- **ROC Curves**: Generated to compare model performance and validate accuracy.
+- **Incremental Uplift Curves**: Created to visualize the effectiveness of the models in increasing conversion rates across different customer segments.
+- **Uplift Tables**: Detailed tables showing incremental responses and profitability metrics for targeted customer segments.
 
 ## Tools Used
-- **Python**: For data manipulation and modeling.
-- **Scikit-Learn**: For implementing logistic regression.
-- **Matplotlib and Seaborn**: For data visualization.
+- Python, Scikit-Learn, Statsmodels for statistical modeling and machine learning.
+- Matplotlib and Seaborn for data visualization.
 
 ## Results
-- Developed a model that accurately predicts customer responsiveness to the ad campaign.
-- Identified key customer segments that are most likely to be influenced by targeted advertising.
-- Estimated an incremental revenue increase of over $1M by targeting the top 30,000 customers identified by the model.
+- **Model Performance**: Logistic Regression and Random Forest models successfully predicted customer responses with high accuracy.
+- **Key Metrics**:
+  - **Uplift Score**: Demonstrated significant incremental conversion gains, quantifying the additional conversions achieved by targeting users identified by the model.
+  - **Incremental Profit**: The uplift model increases incremental profits by $39,182.65, a 247.39% increase over the propensity model when targeting the top 30,000 customers out of 120,000. There are two reasons for this - First, the uplift model sorts consumers by uplift, not propensity, which is the right sorting order if we want to maximize incremental profits. Second, the uplift model uses a breakeven that takes into account the fact that the marginal customer can generate profit organically.
+  
+## Visualizations Included in the Repository
+- **Uplift Curves**: Demonstrate the incremental conversion gains by targeting different customer deciles.
+- **ROC Curve**: Show the diagnostic ability of the logistic regression model.
+- **Feature Importance Chart**: Highlight the most influential variables driving model predictions.
 
 ## Conclusion
-This project demonstrates the power of uplift modeling in enhancing marketing strategies by enabling more targeted, efficient, and effective ad placements. The approach can be generalized to other marketing datasets and scenarios to optimize resource allocation and maximize impact.
+This uplift modeling project has successfully demonstrated how targeted marketing can significantly enhance customer engagement and conversion, leveraging sophisticated predictive modeling to optimize resource allocation and drive substantial business impact in the gaming industry.
